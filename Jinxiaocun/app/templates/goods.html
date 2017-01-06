@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}采购{% endblock %}
+
+{% block page_content %}
+    <br>
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="/purchase">首页</a></li>
+            <li class="active"><a href="/purchase/gonghuoshang">供货商</a></li>
+            <li class="active"><a href="/purchase/gonghuoshang/allgoods">零件</a></li>
+            <li class="active"><a href="/purchase/gonghuoshang/order">订购单</a></li>
+            <li class="active"><a href="/rukuform">入库单</a></li>
+        </ul>
+        <div class="col-md-4">
+            {% if msg %}
+                <div class="alert alert-info" role="alert" style="align-content: center">{{ msg }}</div>{% endif %}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>商品</th>
+                <th>单价</th>
+                <th>库存</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ result[1] }}</td>
+                    <td>{{ result[2] }}</td>
+                    <td>{{ result[3] }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+    <br>
+    <div class="row">
+        <h4 style="text-align: center">采购</h4>
+        {{ wtf.quick_form(form) }}
+    </div>
+    <script type="text/javascript">
+            var date = new Date()
+            y = date.getFullYear();
+            Y = date.getFullYear() + '-';
+            M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+            D = date.getDate() + ' ';
+            h = date.getHours() + ':';
+            m = date.getMinutes() + ':';
+             s = date.getSeconds();
+            document.getElementById('purchasedate').value = Y + M + D + h + m +s;
+{#            document.getElementById('year').value = y;#}
+{#            document.getElementById('date').value = Y + M + D;#}
+        </script>
+
+
+ {% endblock %}

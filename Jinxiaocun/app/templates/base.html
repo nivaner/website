@@ -1,0 +1,69 @@
+{% extends "bootstrap/base.html" %}
+
+{#网页标题#}
+{% block title %}jinxiaocun{% endblock %}
+
+
+
+{#网页样式#}
+{% block styles %}
+    {{ super() }}
+
+    <link rel="shortcut icon" type="image/ico" href="/static/images/favicon.ico" media="screen"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+{% endblock %}
+
+{#导航栏#}
+{% block navbar %}
+    <div class="navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle"
+                        data-toggle="collapse" data-target=".navbar-collpase">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">进销存管理系统</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-collapse">
+                    <li><a href="/">主页</a></li>
+                    <li><a href="/purchase">采购</a></li>
+                    <li><a href="/sale">销售</a></li>
+                    <li><a href="/produce">生产</a></li>
+                    <li><a href="/library">仓库</a></li>
+                    {#                    <li><a href="/login">登录</a></li>#}
+                    <li><a href="/register">注册</a></li>
+                </ul>
+                {#            <ul class="nav navbar-nav navbar-right">#}
+                {#                {% if g.user.is_authenticated %}#}
+                {#                    <li><a href="{{ url_for('security.logout') }}">Sign Out</a> </li>#}
+                {#                {% else %}#}
+                {#                <li><a href="{{ url_for('security.login') }}">Sign In</a> </li>#}
+                {#                <li><a href="{{url_for('security.register')}}">注册</a></li>#}
+                {#                {% endif %}#}
+                {#            </ul>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {% block page_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

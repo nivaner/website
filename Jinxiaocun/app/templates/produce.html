@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}生产{% endblock %}
+
+{% block page_content %}
+    <br>
+    <br>
+    <div>
+    {{ wtf.quick_form(form) }}
+    </div>
+    <script type="text/javascript">
+            var date = new Date()
+            y = date.getFullYear();
+            Y = date.getFullYear() + '-';
+            M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+            D = date.getDate() + ' ';
+            h = date.getHours() + ':';
+            m = date.getMinutes()+':';
+            s = date.getMonth()
+{#            document.getElementById('date').value = Y + M + D;#}
+            document.getElementById('date').value = Y + M + D + h + m+s;
+{#            document.getElementById('year').value = y;#}
+{#            document.getElementById('date').value = Y + M + D;#}
+        </script>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-from app import app
+from app import app,manage
 
-
-app.run(debug=True)
+app.run(debug=True, port=1234)
+# manage.run()

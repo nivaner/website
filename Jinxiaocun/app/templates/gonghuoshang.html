@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}采购{% endblock %}
+
+
+{% block page_content %}
+    <br>
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="/purchase">首页</a></li>
+            <li class="active"><a href="/purchase/gonghuoshang">供货商</a></li>
+            <li class="active"><a href="/purchase/gonghuoshang/allgoods">零件</a></li>
+            <li class="active"><a href="/purchase/gonghuoshang/order">订购单</a></li>
+            <li class="active"><a href="/rukuform">入库单</a></li>
+        </ul>
+        <div class="col-md-4">
+            {% if msg %}
+                <div class="alert alert-info" role="alert" style="align-content: center">{{ msg }}</div>{% endif %}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>供货商的名字</th>
+                <th>操作</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ result[1] }}</td>
+                    <td>
+                        <a href="{{ url_for('detail_gonghuoshang',id=result[1]) }}" class="btn btn-default"
+                           title="查看"><i class="fa fa-search"></i></a>
+                        <a href="{{ url_for('delete_gonghuoshang',id=result[0]) }}" class="btn btn-default"
+                           title="删除"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <div class="row ">
+            <form action="{{ url_for('add_gonghuoshang') }}" class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" id="key" name="key" class="form-control" placeholder="添加供应商">
+                </div>
+                <button type="submit" class="btn btn-success" style="float: right">添加</button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="well text-center">
+            &copy;杨志强
+            <small>版权所有</small>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+.col-md-4 {
+        {#            padding: 16%;#} padding: 3%;
+            background-color: #FCFCFC;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 0 10px #ddd;
+        {#            position: relative;#}{#            left: 35% ;#} background-image: url("/static/images/bg.jpg");
+
+        }
+
+
+{% block page_content %}
+<div class="page-header">
+    <h1 style="text-align: center">Welcome!</h1>
+    <p style="text-align: center">进销存管理系统</p>
+{#    <p style="text-align: center">1、下班都别忘记打卡哟！</p>#}
+{#    <p style="text-align: center">2、如发生错误，不能签退，忘记打卡等情况，请联系管理员</p>#}
+
+</div>
+
+
+{#<div class="col-md-4 col-md-offset-5">#}
+{# <div class="btn-group">#}
+{#  <button type="button" class="btn btn-default" onclick="{location.href='qiandao'}">签到</button>#}
+{#  <button type="button" class="btn btn-default" onclick="{location.href='qiantui'}">签退</button>#}
+{#  <button type="button" class="btn btn-default" onclick="{location.href='admin'}">查看</button>#}
+{# <button type="button" class="btn btn-default" onclick="{location.href='search'}">查询</button>#}
+{#</div>#}
+{#    </div>#}
+
+
+        <footer>
+        <div class="row">
+            <div class="col-md-offset-8" >
+                <small class="footer-copyright" style="
+                        display: inline-block;
+                        font-size: .875em;
+                        margin-top: 1.875em;">© 2017 yangzhiqiang
+                </small>
+            </div>
+        </div>
+    </footer>
+
+
+{% endblock %}
