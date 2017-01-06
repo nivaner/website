@@ -17,7 +17,7 @@ class PurchaseForm(FlaskForm):
     purchase_partname = StringField(u'定购物品', validators=[DataRequired()])
     # purchase_code = StringField(u'货号',validators=[DataRequired()])
     # purchase_partunit = StringField(u'订购型号', validators=[DataRequired()])
-    Purchase_partnumber = IntegerField(u'物品数量',validators=[DataRequired()])
+    purchase_partnumber = IntegerField(u'物品数量',validators=[DataRequired()])
     submit = SubmitField(u'提交')
 
 

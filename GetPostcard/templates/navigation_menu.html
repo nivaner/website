@@ -1,0 +1,35 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target="nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">Postcode</a>
+            <div class="nav-collapse collapse">
+{#                {% if g.user.is_authenticated %}#}
+{#                {% if g.user.is_admin() or g.user.is_user() %}#}
+                <form class="navbar-search" action="{{url_for('search')}}"
+                    method="post" name="search">
+                    {{g.search_form.hidden_tag()}}
+                    {{g.search_form.search(size=100,placeholder="请输入城市查找邮编",class="search-query")}}
+                </form>
+{#                {% endif %}#}
+{#                {% endif %}#}
+{#                <ul class="nav pull-right">#}
+{#                    {% if g.user.is_authenticated %}#}
+{#                    <li><a href="{{url_for('user', nickname=g.user.nickname)}}">{{g.user.nickname}}</a></li>#}
+{#                    <li><a href="{{url_for('security.logout')}}">退出</a></li>#}
+{#                    {% else %}#}
+{#                    <li><a href="{{url_for('security.login')}}">登录</a></li>#}
+{#                    <li><a href="{{url_for('security.register')}}">注册</a></li>#}
+{#                    {% endif %}#}
+{#                </ul>#}
+                    <ul class="nav pull-right">
+                        <li><a href="/admin">深度查询</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>

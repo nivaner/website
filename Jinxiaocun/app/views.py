@@ -159,6 +159,7 @@ def rukuform():
         # # 创建数据库的游标
         for rs in results:
             sql = " insert into library(name,num) values('{0}',{1})".format(rs[1],rs[3])
+            print sql
             cursor.execute(sql)
             # 用游标操作数据库，sql数据库行为，函数的实参
             conn.commit()
@@ -178,7 +179,8 @@ def order():
     # # 创建数据库的链接
     cursor = conn.cursor()
     # # 创建数据库的游标
-    sql = " select * from order_tbl WHERE order_date = '{0}'".format(nowtime.date())
+    # sql = " select * from order_tbl WHERE order_date = '{0}'".format(nowtime.date())
+    sql = " select * from order_tbl "
     print sql
     # 执行sql语句
     cursor.execute(sql)
@@ -227,6 +229,7 @@ def detail_gonghuoshang(id):
     # # 创建数据库的游标
     sql = " select * from goods_tbl g inner join gonghuoshang_tbl ghs on g.gonghuoshang_name = ghs.name where ghs.name = '{0}'".format(id)
     # 执行sql语句
+    print sql
     cursor.execute(sql)
     # # 获取所有结果
     results = cursor.fetchall()
@@ -241,7 +244,10 @@ def detail_gonghuoshang(id):
         # 创建数据库的链接
         cursor = conn.cursor()
         # 创建数据库的游标
-        sql = " insert into order_tbl(name,num,order_date) values('{1}','{2}')".format(form.purchase_partname.data,form.Purchase_partnumber.data, form.purchasedate.data)
+        # sql = " insert into order_tbl(name,num,order_date) values('{1}',{2},'{3}')".format(form.purchase_partname.data,form.Purchase_partnumber.data, form.purchasedate.data)
+        # sql = " insert into order_tbl(name,num) values('{1}',{2})".format(form.purchase_partname.data,form.Purchase_partnumber.data)
+        # sql = "insert into order_tbl(name,num) values('filco',200)"
+        sql = "insert into order_tbl(name,num) values('{0}',{1})".format(form.purchase_partname.data,form.purchase_partnumber.data)
         # 执行sql语句
         print sql
         cursor.execute(sql)

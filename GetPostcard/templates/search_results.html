@@ -1,0 +1,25 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Search</title>#}
+{#</head>#}
+{#<body>#}
+{#    <p>hello</p>#}
+{#</body>#}
+{#</html>#}
+
+
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>查询"{{query}}"结果为：</h1>
+{% for a in results %}
+    <p style="text-align:center;font-family:arial;font-size:20px;">{{ a.city_name }}{{ a.postcode }}</p>
+
+{#    {% for b in a.city_name %}#}
+{#        {{ b }}#}
+{#    {% endfor %}#}
+{% endfor %}
+{% endblock %}

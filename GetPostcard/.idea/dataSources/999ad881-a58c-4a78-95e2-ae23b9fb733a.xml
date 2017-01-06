@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Sqlite (Xerial) - data.sqlite">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+    <schema id="1">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="citys"/>
+    <column id="3" parent="2" name="city_name">
+      <data-type>VARCHAR(50)(0,-1)|12</data-type>
+    </column>
+    <column id="4" parent="2" name="postcode">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(20)(0,-1)|12</data-type>
+    </column>
+    <key id="5" parent="2">
+      <columns>postcode</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
