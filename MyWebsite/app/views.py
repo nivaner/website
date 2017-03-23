@@ -4,9 +4,14 @@ from flask_login import current_user
 from flask_security import login_required
 
 @app.route('/')
+@app.route('/home')
 # @login_required
 def home():
     return  render_template("index.html")
+
+@app.route('/wechat')
+def wechat():
+    return render_template("wechat.html")
 
 @app.before_request
 def before_request():
