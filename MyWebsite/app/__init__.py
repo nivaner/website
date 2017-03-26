@@ -11,6 +11,8 @@ from flask_babelex import Babel
 # pagedown使用js实现客户端Markdown到html的转换
 from flask_pagedown import PageDown
 
+from flask_moment import Moment
+
 app = Flask(__name__)
 app.config.from_object('config')
 
@@ -21,9 +23,10 @@ migrate = Migrate(app,db)
 manage.add_command('db', MigrateCommand)
 babel = Babel(app)
 pagedown = PageDown(app)
+moment = Moment(app)
 
 from app import views
-from models import User, Role, roles_users
+from models import User, Role, roles_users, Post, Category
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore, register_form = ExtendedRegisterForm)

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            color: #2f2f2f;
+            font-size: 16px;
+        {#            font-weight: 400;#} line-height: 2.0;
+        }
+
+        p {
+            margin: 0 0 25px;
+        }
+
+        p img {
+            display: block;
+            margin: 5em auto;
+        }
+
+        .post-meta {
+            margin: 0 0 .4em 0;
+            color: #c7c7c7;
+        }
+        .title{
+            margin-bottom: 1.6em ;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="page-content">
+                    <div class="post-meta">
+                        <time datetime="2017-02-22 10:05:00 +0900" itemprop="datePublished"
+                              class="post-meta__date date">{{ post.timestamp }}
+                        </time>
+                        • <span class="post-meta__tags tags">{{ post.category_tag }}</span>
+                    </div>
+                    <div class="title"><h1>{{ post.title }}</h1></div>
+                    <hr>
+
+                    <div class="post-body">
+                        {% if post.body_html %}
+                            {{ post.body_html | safe }}
+                        {% else %}
+                            {{ post.body }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

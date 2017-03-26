@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Sqlite (Xerial) - aipatent_main.db">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+    <schema id="1">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="alembic_version"/>
+    <table id="3" parent="1" name="categorys"/>
+    <table id="4" parent="1" name="post"/>
+    <table id="5" parent="1" name="role"/>
+    <table id="6" parent="1" name="roles_users"/>
+    <table id="7" parent="1" name="user"/>
+    <column id="8" parent="2" name="version_num">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(32)(0,-1)|12</data-type>
+    </column>
+    <key id="9" parent="2" name="alembic_version_pkc">
+      <columns>version_num</columns>
+      <primary>1</primary>
+    </key>
+    <column id="10" parent="3" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="11" parent="3" name="tag">
+      <data-type>VARCHAR(64)(0,-1)|12</data-type>
+    </column>
+    <key id="12" parent="3">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="13" parent="4" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="14" parent="4" name="title">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="15" parent="4" name="body">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="16" parent="4" name="body_html">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="17" parent="4" name="timestamp">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="18" parent="4" name="category_tag">
+      <data-type>VARCHAR(64)(0,-1)|12</data-type>
+    </column>
+    <index id="19" parent="4" name="ix_post_timestamp">
+      <columns>timestamp</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="20" parent="4">
+      <columns>id)
+foreign key(category_tag</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="21" parent="4" name="#FAKE_post_1">
+      <name-surrogate>1</name-surrogate>
+      <columns>category_tag</columns>
+      <deferrable>1</deferrable>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>categorys(tag)</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="22" parent="5" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="23" parent="5" name="name">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="24" parent="5" name="description">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <index id="25" parent="5" name="sqlite_autoindex_role_1">
+      <name-surrogate>1</name-surrogate>
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="26" parent="5">
+      <columns>id)
+unique (name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="27" parent="6" name="user_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="28" parent="6" name="role_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <foreign-key id="29" parent="6" name="#FAKE_roles_users_1">
+      <name-surrogate>1</name-surrogate>
+      <columns>user_id</columns>
+      <deferrable>1</deferrable>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>user(id)</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="30" parent="6" name="#FAKE_roles_users_2">
+      <name-surrogate>1</name-surrogate>
+      <columns>role_id</columns>
+      <deferrable>1</deferrable>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>role(id)</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="31" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="32" parent="7" name="nickname">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="33" parent="7" name="email">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="34" parent="7" name="password">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="35" parent="7" name="active">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+    </column>
+    <column id="36" parent="7" name="confirmed_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="37" parent="7" name="sqlite_autoindex_user_1">
+      <name-surrogate>1</name-surrogate>
+      <columns>email</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="38" parent="7">
+      <columns>id)
+unique (email</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

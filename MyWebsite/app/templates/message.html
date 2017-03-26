@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block head %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock %}
+
+{% block content %}
+    <div class="contianer">
+        <div class="row">
+            <div class="col-xs-10 col-md-6 col-md-offset-3 col-xs-offset-1">
+                {#                <p>{{ pagedown.include_pagedown() }}aaa</p>#}
+                <hr>
+                {{ wtf.quick_form(form) }}
+                {% for post in posts %}
+                    <ul class="posts">
+                        <div>{{ post.title }}</div>
+                        <div>{{ post.timestamp }}</div>
+                        <div class="post-body">
+                            {% if post.body_html %}
+                                {{ post.body_html | safe }}
+                            {% else %}
+                                {{ post.body }}
+                            {% endif %}
+                        </div>
+                    </ul>
+                    <hr>
+
+                {% endfor %}
+                <div class="pagination">
+                    {{ macros.pagination_widget(pagination, '.message') }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -11,12 +11,28 @@
     <!-- responsive-nav -->
     <link rel="stylesheet" href="/static/responsive-nav.css">
     <script src="/static/responsive-nav.js"></script>
-{#    <script>#}
-{#        var nav = responsiveNav(".nav-collapse");#}
-{#    </script>#}
+    {#    <script>#}
+    {#        var nav = responsiveNav(".nav-collapse");#}
+    {#    </script>#}
 
     <link rel="stylesheet" href="/static/index.css" type="text/css">
     <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+{#    <script type=text/javascript>#}
+{#        $(function () {#}
+{#            $('a').click(function () {#}
+{##}
+{#                $('html, body').animate({#}
+{##}
+{#                    scrollTop: $($.attr(this, 'href')).offset().top#}
+{##}
+{#                }, 500);#}
+{##}
+{#                return false;#}
+{##}
+{#            });#}
+{#        });#}
+{##}
+{#    </script>#}
 {% endblock %}
 
 

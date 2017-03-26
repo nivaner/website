@@ -28,58 +28,73 @@ class User(db.Model, UserMixin):
     confirmed_at = db.Column(db.DateTime())
     roles = db.relationship('Role', secondary=roles_users,
             backref=db.backref('users', lazy='dynamic'))
-    posts = db.relationship('Post', db.ForeignKey('users.id'))
+    # posts = db.relationship('Post', db.ForeignKey('users.id'))
+
+
 
 class Post(db.Model):
+    __name__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.Text)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
-
-class Post(db.Model):
-    __tablename__ = "posts"
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(64))
+    title =db.Column(db.Text)
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
-    summury = db.Column(db.Text)
-    summury_html = db.Column(db.Text)
-
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-
-    category_id = db.Column(db.Integer, db.ForeignKey('categorys.id'))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
+    # author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    category_tag = db.Column(db.String(64), db.ForeignKey('categorys.tag'))
 
     @staticmethod
+    def generate_fake(count=100):
+        from random import seed, randint
+        import forgery_py
+
+        seed()
+        for i in range(count):
+            p = Post(body=forgery_py.lorem_ipsum.sentences(randint(1, 3)),
+                     timestamp=forgery_py.date.date(True))
+            db.session.add(p)
+            db.session.commit()
+
     def on_changed_body(target, value, oldvalue, initiator):
-        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'code', 'blockquote', 'em', 'i',
-                        'strong', 'li', 'ol', 'pre', 'strong', 'ul', 'h1', 'h2', 'h3', 'p']
-        target.body_html = bleach.linkify(bleach.clean(
-            markdown(value, output_format='html'),
-            tags=allowed_tags, strip=True)
+        allowed_tags = [
+            'a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
+            'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul',
+            'h1', 'h2', 'h3', 'p', 'img','center'
+        ]
+        # 需要提取的标签属性，否则会被忽略掉
+        attrs = {
+            '*': ['class','center','&nbsp;'],
+            'a': ['href', 'rel'],
+            'img': ['src', 'alt']
+        }
+        target.body_html = bleach.linkify(
+            bleach.clean(
+                markdown(value, output_format='html'),
+                tags=allowed_tags,
+                attributes=attrs,
+                strip=True
+            )
         )
-
-    @staticmethod
-    def on_changed_summury(target, value, oldvalue, initiator):
-        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'code', 'blockquote', 'em', 'i',
-                        'strong', 'li', 'ol', 'pre', 'strong', 'ul', 'h1', 'h2', 'h3', 'p']
-        target.summury_html = bleach.linkify(bleach.clean(
-            markdown(value, output_format='html'),
-            tags=allowed_tags, strip=True)
-        )
-
 
 db.event.listen(Post.body, 'set', Post.on_changed_body)
-db.event.listen(Post.summury, 'set', Post.on_changed_summury)
 
 
 class Category(db.Model):
     __tablename__ = "categorys"
     id = db.Column(db.Integer, primary_key=True)
     tag = db.Column(db.String(64))
-    count = db.Column(db.Integer)
     posts = db.relationship("Post", backref="category")
 
 
-class Like(db.Model):
-    __tablename__ = "Like"
-    id = db.Column(db.Integer, primary_key=True)
-    like_count = db.Column(db.Integer)
+# class Tag(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(64))
+#     posts = db.relationship('Post', secondary=roles_users,
+#                             backref=db.backref('tags', lazy='dynamic'))
+#
+# # 多对多关系
+# posts_tags = db.Table('posts_tags',
+#                        db.Column('post_id', db.Integer(), db.ForeignKey('posts.id')),
+#                        db.Column('tag_id', db.Integer(), db.ForeignKey('tags.id')))
+
+
+

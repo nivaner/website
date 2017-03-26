@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock %}
+
+
+{% block content %}
+    {#        {{ wtf.quick_form(form) }}#}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">TO EDIT THE BLOG!</h2>
+                <form class="form-horizontal" method="post" action="">
+                    <div class="row">
+                        {{ form.csrf_token }}
+                        <div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;margin: 2.6em 16em;">
+                            <div class="form-group  required"><label class="control-label" for="title">标题</label>
+                                <input class="form-control" id="title" name="title" required="" type="text" value="">
+                            </div>
+                            <div class="form-group  required"><label class="control-label" for="category">标签</label>
+                                <input class="form-control" id="category" name="category" required="" type="text"
+                                       value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label>编辑内容</label>
+                                <div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;">
+                                    <div class="flask-pagedown">
+                                    <textarea class="form-control flask-pagedown-input"
+                                              id="flask-pagedown-body" name="body"
+                                              placeholder="the body" , style="height: 60em"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>预览</label>
+                                <div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;">
+                                    <div class=" form-control flask-pagedown-preview" id="flask-pagedown-body-preview"
+                                         style="height: 60em;"></div>
+                                    <script type="text/javascript">
+                                        f = function () {
+                                            if (typeof flask_pagedown_converter === "undefined")
+                                                flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+                                            var textarea = document.getElementById("flask-pagedown-body");
+                                            var preview = document.getElementById("flask-pagedown-body-preview");
+                                            textarea.onkeyup = function () {
+                                                preview.innerHTML = flask_pagedown_converter(textarea.value);
+                                            }
+                                            textarea.onkeyup.call(textarea);
+                                        }
+                                        if (document.readyState === 'complete')
+                                            f();
+                                        else if (window.addEventListener)
+                                            window.addEventListener("load", f, false);
+                                        else if (window.attachEvent)
+                                            window.attachEvent("onload", f);
+                                        else
+                                            f();
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Go" class="btn btn-large btn-block btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+{% endblock %}
+
+
+
+

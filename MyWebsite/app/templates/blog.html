@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
 
-</body>
-</html>
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <ul class="posts">
+                    {% for post in posts %}
+                        <div class="post-meta">
+                            <time datetime="2017-02-22 10:05:00 +0900" itemprop="datePublished"
+                                  class="post-meta__date date">{{ post.timestamp }}
+                            </time>
+                            • <span class="post-meta__tags tags">{{ post.category_tag }}</span>
+                        </div>
+                        <a href="{{ url_for('.post', id=post.id) }}">
+                            <div class="title"><h1>{{ post.title }}</h1></div>
+                        </a>
+                        <div class="post-body">
+                            {% if post.body_html %}
+                                {{ post.body_html | safe | truncate(220, True) }}
+                            {% else %}
+                                {{ post.body }}
+                            {% endif %}
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                    {% endfor %}
+                    <div class="pagination">
+                        {{ macros.pagination_widget(pagination, '.blog') }}
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

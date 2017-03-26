@@ -2,7 +2,8 @@
 import os
 
 WTF_CSRF_ENABLED = True
-SECRET_KEY = 'super-secret-you-will-never-hack'
+# random number more security
+SECRET_KEY = os.urandom(24)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'aipatent_main.db')
