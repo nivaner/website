@@ -1,0 +1,321 @@
+/****************************** global **************************/
+
+@font-face {
+    font-family: 'angel_tearstrial';
+    src: url('/static/font/angel___-webfont.woff2') format('woff2'),
+    url('/static/font/angel___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    /*position: relative;*/
+    top: 0px;
+}
+
+/************************* page home **************************/
+
+.login {
+    padding: 1% 5% 2% 5%;
+    display: block;
+    margin-top: 5em;
+    background-color: white;
+    border-radius: .8em;
+    position: relative;
+}
+
+.login h2, h4 {
+    text-align: center;
+}
+
+.warning_li_password, .warning_li_user {
+    padding-left: 2em;
+}
+
+.register {
+    padding: 5% 5% 0% 5%;
+}
+
+.register .form-group {
+    margin-bottom: 2.5em;
+}
+
+.alert-input {
+    margin-top: 1em;
+}
+
+.page-home {
+    /*background: url("/static/imgs/home_background.jpg") 0 / cover fixed;*/
+    background: url("/static/imgs/home_background.jpg");
+    padding-top: 5%;
+    padding-bottom: 12%;
+}
+
+.page-home .page-home-head, .modal-body p {
+    text-align: center;
+    margin-top: 0;
+    font-family: 'angel_tearstrial';
+    font-size: 100px;
+    letter-spacing: 10px;
+    /*color: cadetblue;*/
+    color: black;
+}
+
+.page-home .welcome {
+    text-align: center;
+    color: black;
+}
+
+/*************************** page punch ***************************8*/
+
+/*.page-punch {*/
+/*background-color: aliceblue;*/
+/*}*/
+
+.page-punch {
+    padding-top: 5em;
+    padding-bottom: 3em;
+    display: block;
+    position: relative;
+    background-color: aliceblue;
+    /*z-index:120;*/
+}
+
+.punch-form {
+    padding: 2% 5%;
+    display: block;
+    margin: 5em 0 5em;
+    background-color: white;
+    border-radius: .8em;
+    position: relative;
+}
+
+.pie {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: yellowgreen;
+    background-image: linear-gradient(to right, transparent 50%, #655 0);
+}
+
+.pie::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    /*background: #655;*/
+    background-color: inherit;
+    transform-origin: left;
+    tansform: rotate(.2turn);
+}
+
+/***************************  punch ***************************8*/
+
+.punch {
+    padding-top: 5em;
+    padding-bottom: 3em;
+    display: block;
+    position: relative;
+    background-color: aliceblue;
+}
+
+.punch .punch-h2 {
+    font-family: "angel_tearstrial";
+    font-size: 4em;
+    letter-spacing: 0.1em;
+}
+
+.punch .text-center {
+    text-align: center;
+}
+
+.punch .divider-header {
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background: #666;
+}
+
+.punch-head {
+    margin-bottom: 4em;
+}
+
+.punch-box {
+    background: #fff;
+    border-bottom: 2px solid #f7f7f7;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+
+    height: 299px
+}
+
+.punch-box p {
+    margin: 2em auto;
+}
+
+.punch-box .input-group {
+    margin-bottom: 2em;
+}
+
+.punch-box footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 2px;
+}
+
+.punch .btn {
+    margin-bottom: 2em;
+}
+
+
+.punch-dialog {
+    position: absolute;
+    top: 50%;
+    left: 8em;
+    /*color: black;*/
+    /*margin: auto;*/
+    /*border-width: initial;*/
+    border-style: solid;
+    /*border-color: initial;*/
+    /*border-image: initial;*/
+    padding: 1em;
+    background: white;
+}
+
+.punch-amendment {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    border-style: solid;
+    padding: 1em;
+    background: white;
+}
+
+
+/*.punch {*/
+/*position: fixed;*/
+/*top: 0;*/
+/*right: 0;*/
+/*bottom: 0;*/
+/*left: 0;*/
+/*background: rgba(0,0,0, .8);*/
+/*}*/
+
+/***************************  punch-showData ***************************8*/
+/*.punch-showData{*/
+/*background-color: beige;*/
+/*}*/
+
+/*.chart div {*/
+/*font: 10px sans-serif;*/
+/*background-color: steelblue;*/
+/*text-align: right;*/
+/*padding: 3px;*/
+/*margin: 1px;*/
+/*color: white;*/
+/*}*/
+
+.chart_two {
+    font: 10px sans-serif;
+    /*!*background-color: silver;*!*/
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+
+    background: #fff;
+    border-bottom: 2px solid #f7f7f7;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+
+    /*height: 299px*/
+}
+
+.chart_one {
+    font: 10px sans-serif;
+    /*!*background-color: silver;*!*/
+    text-align: right;
+    margin: 1px;
+    color: white;
+
+    background: #fff;
+    border-bottom: 2px solid #f7f7f7;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+
+    /*height: 299px*/
+}
+
+.chart_one svg {
+    border: 2px solid #EFEFEF;
+    /*box-shadow: -2px -2px 2px #EFEFEF, 5px 5px 5px #B9B9B9*/
+}
+
+.chart_two svg {
+    border: 2px solid #EFEFEF;
+    /*box-shadow: -2px -2px 2px #EFEFEF, 5px 5px 5px #B9B9B9;*/
+
+}
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+/**/
+/*.footer-btn{*/
+/*margin: 9em auto;*/
+/*}*/
+
+/*<a href="#" class="btn btn-skin" style="*/
+/*color: #fff;*/
+/*background-color: #3dc9b3;*/
+/*border-color: #3dc9b3;*/
+/*border-radius: 2px;*/
+/*position: relative;*/
+/*display: inline-block;*/
+/*outline: none;*/
+/*color: #fff;*/
+/*text-decoration: none;*/
+/*text-transform: uppercase;*/
+/*letter-spacing: 1px;*/
+/*font-weight: 400;*/
+/*text-shadow: 0 0 1px rgba(255,255,255,0.3);*/
+/*font-size: 14px;*/
+/*">提交</a>*/
+
+/*.text-center{*/
+/*text-align: center;*/
+/*}*/
