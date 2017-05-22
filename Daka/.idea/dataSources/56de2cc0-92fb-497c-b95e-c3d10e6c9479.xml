@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Sqlite (Xerial) - daka.db">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+    <schema id="1">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="alembic_version"/>
+    <table id="3" parent="1" name="punch"/>
+    <table id="4" parent="1" name="user"/>
+    <column id="5" parent="2" name="version_num">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(32)(0,-1)|12</data-type>
+    </column>
+    <column id="6" parent="3" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="7" parent="3" name="time">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="8" parent="3" name="year">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="9" parent="3" name="month">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="10" parent="3" name="day">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="11" parent="3" name="hour">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="12" parent="3" name="description">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="13" parent="3" name="worktime">
+      <data-type>FLOAT(0,-1)|6</data-type>
+    </column>
+    <column id="14" parent="3" name="name">
+      <data-type>VARCHAR(256)(0,-1)|12</data-type>
+    </column>
+    <key id="15" parent="3">
+      <columns>id)
+foreign key(name</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="16" parent="3" name="#FAKE_punch_1">
+      <name-surrogate>1</name-surrogate>
+      <columns>name</columns>
+      <deferrable>1</deferrable>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>user(nickname)</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="17" parent="4" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="18" parent="4" name="nickname">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <column id="19" parent="4" name="password_hash">
+      <data-type>VARCHAR(255)(0,-1)|12</data-type>
+    </column>
+    <key id="20" parent="4">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
