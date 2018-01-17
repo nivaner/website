@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="liuyan-msg">
+                <h3 >欢迎你在这里留下足迹 👣。</h3>
+                <p>不管是鼓励我，批评我的，你在这里可以畅所欲言。</p>
+                <p><a href="/message">查看老版留言，点击这里</a></p>
+                </div>
+                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    <script>
+        var cloudTieConfig = {
+            url: document.location.href,
+            sourceId: "",
+            productKey: "4950ef9ac1e749d79feaa94e0827c952",
+            target: "cloud-tie-wrapper"
+        };
+        var yunManualLoad = true;
+        Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+    </script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %} 五子棋 | Naifan {% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/css/gobang.css">
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <input value="TwoPlayer" type="button" class="btn btn-success oneplay" onclick="onePlay()">
+                <input value="OnePlayer" type="button" class="btn btn-success twoplay" onclick="twoPlay()">
+                <canvas id="chess" width="450px" height="450px"></canvas>
+                <script type="text/javascript" src="/static/js/gobang.js"></script>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,30 @@
+.container .header {
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'angel_tearstrial';
+    src: url('/static/font/angel___-webfont.woff2') format('woff2'),
+    url('/static/font/angel___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.brand {
+    font-family: 'angel_tearstrial';
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+.liuyan-msg {
+    text-align: center;
+    padding: 1em;
+    background-color: ivory;
+}
+
+ @media only screen and (max-width: 480px) {
+     .footer-top p {
+         font-size: 10px;
+     }
+ }

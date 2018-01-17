@@ -1,0 +1,39 @@
+2017-04-23 01:49:50,779 CRIT Supervisor running as root (no user in config file)
+2017-04-23 01:49:50,783 INFO daemonizing the supervisord process
+2017-04-23 01:49:50,783 INFO supervisord started with pid 11421
+2017-04-23 01:49:51,785 INFO spawned: 'mywebsite' with pid 11422
+2017-04-23 01:49:51,791 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:52,761 CRIT Supervisor running as root (no user in config file)
+2017-04-23 01:49:52,765 INFO daemonizing the supervisord process
+2017-04-23 01:49:52,765 INFO supervisord started with pid 11427
+2017-04-23 01:49:52,794 INFO spawned: 'mywebsite' with pid 11428
+2017-04-23 01:49:52,801 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:53,767 INFO spawned: 'mywebsite' with pid 11429
+2017-04-23 01:49:53,774 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:54,075 CRIT Supervisor running as root (no user in config file)
+2017-04-23 01:49:54,079 INFO daemonizing the supervisord process
+2017-04-23 01:49:54,079 INFO supervisord started with pid 11434
+2017-04-23 01:49:54,776 INFO spawned: 'mywebsite' with pid 11435
+2017-04-23 01:49:54,783 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:54,804 INFO spawned: 'mywebsite' with pid 11436
+2017-04-23 01:49:54,811 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:55,082 INFO spawned: 'mywebsite' with pid 11437
+2017-04-23 01:49:55,089 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:56,091 INFO spawned: 'mywebsite' with pid 11438
+2017-04-23 01:49:56,134 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:56,787 INFO spawned: 'mywebsite' with pid 11439
+2017-04-23 01:49:56,797 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:57,816 INFO spawned: 'mywebsite' with pid 11440
+2017-04-23 01:49:57,825 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:58,138 INFO spawned: 'mywebsite' with pid 11441
+2017-04-23 01:49:58,144 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:49:58,825 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 01:49:59,801 INFO spawned: 'mywebsite' with pid 11442
+2017-04-23 01:49:59,808 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:50:00,809 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 01:50:01,149 INFO spawned: 'mywebsite' with pid 11445
+2017-04-23 01:50:01,156 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:50:02,157 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 02:16:17,645 WARN received SIGTERM indicating exit request
+2017-04-23 02:16:21,800 WARN received SIGTERM indicating exit request
+2017-04-23 02:16:28,449 WARN received SIGTERM indicating exit request

@@ -1,0 +1,14 @@
+canvas{
+    display: block;
+    margin: 60px auto;
+    /*box-shadow: -2px -2px 2px #EFEFEF, 5px 5px 5px #B9B9B9;*/
+    background-image: url('/static/imgs/chessbackground.png');
+}
+
+body{
+    background-image: url('/static/imgs/gobang_showbg.jpg');
+}
+
+.row{
+     padding-bottom: 3em;
+}

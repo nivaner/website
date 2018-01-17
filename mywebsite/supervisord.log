@@ -1,0 +1,86 @@
+2017-04-23 01:52:07,559 CRIT Supervisor running as root (no user in config file)
+2017-04-23 01:52:07,564 INFO daemonizing the supervisord process
+2017-04-23 01:52:07,564 INFO supervisord started with pid 11609
+2017-04-23 01:52:08,567 INFO spawned: 'mywebsite' with pid 11610
+2017-04-23 01:52:08,575 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:52:09,578 INFO spawned: 'mywebsite' with pid 11611
+2017-04-23 01:52:09,587 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:52:11,591 INFO spawned: 'mywebsite' with pid 11612
+2017-04-23 01:52:11,599 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:52:14,604 INFO spawned: 'mywebsite' with pid 11613
+2017-04-23 01:52:14,611 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:52:15,612 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 01:58:28,831 CRIT Supervisor running as root (no user in config file)
+2017-04-23 01:58:28,836 INFO daemonizing the supervisord process
+2017-04-23 01:58:28,837 INFO supervisord started with pid 11988
+2017-04-23 01:58:29,839 INFO spawned: 'mywebsite' with pid 11989
+2017-04-23 01:58:29,846 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:58:30,849 INFO spawned: 'mywebsite' with pid 11990
+2017-04-23 01:58:30,857 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:58:32,861 INFO spawned: 'mywebsite' with pid 11991
+2017-04-23 01:58:32,872 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:58:35,877 INFO spawned: 'mywebsite' with pid 11992
+2017-04-23 01:58:35,884 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 01:58:36,886 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 02:16:35,978 WARN received SIGTERM indicating exit request
+2017-04-23 02:16:41,221 WARN received SIGTERM indicating exit request
+2017-04-23 02:23:32,069 CRIT Supervisor running as root (no user in config file)
+2017-04-23 02:23:32,075 INFO daemonizing the supervisord process
+2017-04-23 02:23:32,075 INFO supervisord started with pid 13734
+2017-04-23 02:23:33,077 INFO spawned: 'mywebsite' with pid 13735
+2017-04-23 02:23:34,736 INFO success: mywebsite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-04-23 02:25:49,537 INFO exited: mywebsite (terminated by SIGKILL; not expected)
+2017-04-23 02:25:50,539 INFO spawned: 'mywebsite' with pid 13859
+2017-04-23 02:25:52,210 INFO success: mywebsite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-04-23 02:28:29,672 INFO exited: mywebsite (terminated by SIGKILL; not expected)
+2017-04-23 02:28:30,674 INFO spawned: 'mywebsite' with pid 14026
+2017-04-23 02:28:32,366 INFO success: mywebsite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-04-23 02:31:03,870 INFO exited: mywebsite (terminated by SIGKILL; not expected)
+2017-04-23 02:31:04,872 INFO spawned: 'mywebsite' with pid 14184
+2017-04-23 02:31:06,473 INFO success: mywebsite entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-04-23 02:32:52,035 CRIT Supervisor running as root (no user in config file)
+2017-04-23 02:32:52,041 INFO daemonizing the supervisord process
+2017-04-23 02:32:52,041 INFO supervisord started with pid 14282
+2017-04-23 02:32:53,043 INFO spawned: 'mywebsite' with pid 14283
+2017-04-23 02:32:53,051 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:32:54,054 INFO spawned: 'mywebsite' with pid 14284
+2017-04-23 02:32:54,062 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:32:56,066 INFO spawned: 'mywebsite' with pid 14285
+2017-04-23 02:32:56,076 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:32:59,081 INFO spawned: 'mywebsite' with pid 14286
+2017-04-23 02:32:59,091 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:00,093 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 02:33:11,079 CRIT Supervisor running as root (no user in config file)
+2017-04-23 02:33:11,084 INFO daemonizing the supervisord process
+2017-04-23 02:33:11,085 INFO supervisord started with pid 14334
+2017-04-23 02:33:12,087 INFO spawned: 'mywebsite' with pid 14335
+2017-04-23 02:33:12,094 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:13,097 INFO spawned: 'mywebsite' with pid 14336
+2017-04-23 02:33:13,107 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:15,111 INFO spawned: 'mywebsite' with pid 14339
+2017-04-23 02:33:15,128 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:18,133 INFO spawned: 'mywebsite' with pid 14341
+2017-04-23 02:33:18,143 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:19,144 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 02:33:19,350 CRIT Supervisor running as root (no user in config file)
+2017-04-23 02:33:19,355 INFO daemonizing the supervisord process
+2017-04-23 02:33:19,355 INFO supervisord started with pid 14355
+2017-04-23 02:33:20,358 INFO spawned: 'mywebsite' with pid 14357
+2017-04-23 02:33:20,367 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:21,369 INFO spawned: 'mywebsite' with pid 14359
+2017-04-23 02:33:21,378 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:23,382 INFO spawned: 'mywebsite' with pid 14364
+2017-04-23 02:33:23,389 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:26,394 INFO spawned: 'mywebsite' with pid 14366
+2017-04-23 02:33:26,402 INFO exited: mywebsite (exit status 1; not expected)
+2017-04-23 02:33:27,403 INFO gave up: mywebsite entered FATAL state, too many start retries too quickly
+2017-04-23 02:35:30,486 WARN received SIGTERM indicating exit request
+2017-04-23 02:35:30,487 INFO waiting for mywebsite to die
+2017-04-23 02:35:33,490 INFO waiting for mywebsite to die
+2017-04-23 02:35:36,494 INFO waiting for mywebsite to die
+2017-04-23 02:35:36,729 WARN received SIGTERM indicating exit request
+2017-04-23 02:35:39,498 INFO waiting for mywebsite to die
+2017-04-23 02:35:40,499 WARN killing 'mywebsite' (14184) with SIGKILL
+2017-04-23 02:35:40,501 INFO stopped: mywebsite (terminated by SIGKILL)
+2017-04-23 02:35:43,005 WARN received SIGTERM indicating exit request
+2017-04-23 02:35:48,441 WARN received SIGTERM indicating exit request
