@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    {{ super() }}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3 ">
+                <div class="header">
+                    <h2>奈凡</h2>
+                    <span>为学日益，为道益损</span>
+                </div>
+            </div>
+            <img src="/static/imgs/newIndex.jpg" class="col-xs-10 col-md-6 col-md-offset-3 col-xs-offset-1" style="margin-top: 2.3em;margin-bottom: 2.5em;">
+            <div class="col-xs-12 col-md-6 col-md-offset-3 ">
+                <p id="panel">嗨，我是奈凡，一名python web开发者。现在南京上学，就职于语真科技公司。正在修行，探求创意之源。</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    {% include "footer.html" %}
+{% endblock %}
