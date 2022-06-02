@@ -26,7 +26,7 @@ Flask-SQLAlchemy==2.1
 Flask-Weixin-Pay==0.3.4
 Flask-WTF==0.13.1
 ForgeryPy==0.1
-html5lib==0.9999999
+html5lib==0.99999999
 import-string==0.1.0
 itsdangerous==0.24
 Jinja2==2.8
