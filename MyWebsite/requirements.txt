@@ -31,7 +31,7 @@ import-string==0.1.0
 itsdangerous==0.24
 Jinja2==2.8
 macholib==1.5.1
-Mako==1.0.4
+Mako==1.2.2
 manage==0.1.13
 Markdown==2.6.7
 MarkupSafe==0.23
